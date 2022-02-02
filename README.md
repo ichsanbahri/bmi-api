@@ -26,7 +26,8 @@ next Install Router Go-Chi
   ```
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## installation and usage
+
 
 Open Url 
 ```sh
