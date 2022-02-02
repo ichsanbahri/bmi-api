@@ -21,7 +21,7 @@ func main() {
 	// Url for test:
 	// http://127.0.0.1:8181/?height=167&weight=70
 	//
-	r.Get("/bmi-api/", func(w http.ResponseWriter, r *http.Request) {
+	r.Get("/api/", func(w http.ResponseWriter, r *http.Request) {
 		height, err := strconv.ParseFloat(r.URL.Query().Get("height"), 32)
 		if err != nil {
 			returnError(w, "Height must in number")
@@ -52,7 +52,7 @@ func main() {
 		w.Write(out)
 
 	})
-	http.ListenAndServe(":8181", r)
+	http.ListenAndServe(":8080", r)
 }
 
 func returnError(w http.ResponseWriter, str string) {
