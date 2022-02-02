@@ -38,7 +38,7 @@ go run api.go
 ```
 Open Url 
 ```sh
-http://127.0.0.1/bmi-api/?height=[insert your height]&weight=[insert your weight]
+https://protected-harbor-67469.herokuapp.com/api/?height=167&weight=70
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
