@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## BMI-CALC API
 BMI-API is a simple ideal weight calculator application built using Golang, why choose Golang, because Golang is very good in building large, easy, fast and safe APIs.
 This is my first project using golang.
 ### Built With
@@ -9,8 +9,8 @@ This API was built with GoLang, Go is an open source programming language suppor
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- REQUIREMENTS -->
+## REQUIREMENTS
 
 Install Go 
 
@@ -27,8 +27,15 @@ next Install Router Go-Chi
 
 <!-- USAGE EXAMPLES -->
 ## installation and usage
-
-
+```
+git clone https://github.com/ichsanbahri/bmi-api.git
+```
+```
+cd bmi-api
+```
+```
+go run api.go
+```
 Open Url 
 ```sh
 http://127.0.0.1/bmi-api/?height=[insert your height]&weight=[insert your weight]
