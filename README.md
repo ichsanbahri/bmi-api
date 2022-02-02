@@ -38,7 +38,11 @@ go run api.go
 ```
 Open Url 
 ```sh
-https://protected-harbor-67469.herokuapp.com/api/?height=167&weight=70
+http://127.0.0.1/api/?height=[insert your height]&weight=[insert your weight]
+```
+Demo Website you can use this link
+```
+https://protected-harbor-67469.herokuapp.com/api/?height=200&weight=20
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
