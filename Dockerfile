@@ -11,6 +11,6 @@ RUN go get -v -u github.com/go-chi/chi/v5
 COPY *.go ./
 RUN go build -o /apigo
 
-EXPOSE 8181
+EXPOSE 8080
 
 CMD ["/apigo"]
