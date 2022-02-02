@@ -1,6 +1,6 @@
 // +heroku goVersion go1.17
 
-module bmi-api
+module bmiapi
 
 go 1.17
 
