@@ -20,9 +20,9 @@ func main() {
 	r.Use(middleware.Recoverer)
 
 	// Url for test:
-	// http://127.0.0.1:8181/?height=167&weight=70
+	// http://127.0.0.1:8080/?height=167&weight=70
 	//
-	r.Get("/api/", func(w http.ResponseWriter, r *http.Request) {
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		height, err := strconv.ParseFloat(r.URL.Query().Get("height"), 32)
 		if err != nil {
 			returnError(w, "Height must in number")
