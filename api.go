@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/go-chi/chi"
@@ -52,7 +53,9 @@ func main() {
 		w.Write(out)
 
 	})
-	http.ListenAndServe(":8080", r)
+	//http.ListenAndServe(":8080", r)
+	port := os.Getenv("PORT")
+	http.ListenAndServe(":" + port)
 }
 
 func returnError(w http.ResponseWriter, str string) {
