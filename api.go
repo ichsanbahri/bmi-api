@@ -55,7 +55,7 @@ func main() {
 	})
 	//http.ListenAndServe(":8080", r)
 	port := os.Getenv("PORT")
-	http.ListenAndServe(":" + port)
+	http.ListenAndServe(":"+port, r)
 }
 
 func returnError(w http.ResponseWriter, str string) {
