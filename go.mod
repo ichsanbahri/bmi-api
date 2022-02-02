@@ -1,6 +1,6 @@
 // +heroku goVersion go1.17
 
-module bmi-a git statuspi
+module bmi-api
 
 go 1.17
 
