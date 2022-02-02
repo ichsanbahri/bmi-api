@@ -23,11 +23,15 @@ func main() {
 	// Url for test:
 	// http://127.0.0.1:8181/?height=167&weight=70
 	//
-	r.Get("/", func(c *gin.Context) {
+	router := gin.Default()
+	router.LoadHTMLGlob("themes/*")
+
+	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
 			"title": "BMI Calculator",
 		})
 	})
+
 	r.Get("/api/", func(w http.ResponseWriter, r *http.Request) {
 		height, err := strconv.ParseFloat(r.URL.Query().Get("height"), 32)
 		if err != nil {
