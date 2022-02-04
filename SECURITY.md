@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-If you find Vulnerability on this source, you can send on issues tab
+If you find Vulnerability on this source, you can send on issues tab or send me email
