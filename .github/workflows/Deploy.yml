@@ -3,9 +3,7 @@ name: Deploy
 on:
   push:
     branches: 
-     - master
-
-    issues:
+     - main
 
 jobs:
 
@@ -26,4 +24,3 @@ jobs:
     - name: run
       run: go run -v ./...
   
-  label-issues:
