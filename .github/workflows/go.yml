@@ -4,6 +4,9 @@ on:
      - main
   
   pull_request:
+    branches:
+    - main
+
     types: [opened, synchronize,reopened]
 
 name : Main Workflows
@@ -14,13 +17,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: stackhawk/hawkscan-action@v1.3.2
+    - name: Owasp Zap Baseline Scan
+      uses: zaproxy/action-baseline@v0.3.0
       with:
-        apiKey: ${{ secrets.HAWK_API_KEY }}
-        codeScanningAlerts: true
-        configurationFiles: |
-          stackhawk.yml
-
+        target: "https://protected-harbor-67469.herokuapp.com/"
+        
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
