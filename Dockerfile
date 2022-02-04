@@ -1,5 +1,6 @@
 FROM golang:1.17-alpine
 WORKDIR /app
+
 COPY go.mod ./
 COPY go.sum ./
 
@@ -10,6 +11,6 @@ RUN go get -v -u github.com/go-chi/chi/v5
 COPY *.go ./
 RUN go build -o /apigo
 
-EXPOSE 8181
+EXPOSE 8080
 
 CMD ["/apigo"]
