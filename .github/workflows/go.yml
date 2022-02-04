@@ -16,9 +16,6 @@ jobs:
       with:
         apiKey: ${{ secrets.HAWK_API_KEY }}
         codeScanningAlerts: true
-        githubToken: ${{ github.token }}
-        configurationFiles: |
-          stackhawk.yml
 
     - name: Set up Go
       uses: actions/setup-go@v2
