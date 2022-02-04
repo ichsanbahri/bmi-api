@@ -1,25 +1,57 @@
-name: Go
-
 on:
   push:
     branches: 
      - main
+  
+  pull_request:
+    branches:
+    - main
+    types: [opened, synchronize,reopened]
 
+  discussion:
+    types: [created, edited, answered]
+  
+  issues:
+    types: [opened, edited, milestoned]
+  
+  label:
+    types: [created, deleted]
+
+name : Main Workflows
 jobs:
+  specific_review_requested:
+      if: ${{ github.event.requested_team.name == 'ichsan-team'}}
+      steps:
+        - run: echo 'A review from ichsan-team was requested'
 
   build:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-
+    
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
 
+    - name: Build Docker image
+      run: docker build . --file Dockerfile --tag apigo:$(date +%s)
+
     - name: Build
       run: go build -v ./...
 
-    - name: Run
-      run: go run -v ./...
+    - name: Test
+      run: go test -v ./...
+    
+    - name: Owasp ZAP
+      uses: zaproxy/action-baseline@v0.6.1
+      with:
+       token: ${{ secrets.GITHUB_TOKEN }}
+       docker_name: 'owasp/zap2docker-stable'
+       target: 'https://protected-harbor-67469.herokuapp.com/'
+       rules_file_name: '.zap/rules.tsv'
+       cmd_options: '-a'
+        
+
+        
