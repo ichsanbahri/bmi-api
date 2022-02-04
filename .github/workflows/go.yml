@@ -8,6 +8,15 @@ on:
     - main
     types: [opened, synchronize,reopened]
 
+  discussion:
+    types: [created, edited, answered]
+  
+  issues:
+    types: [opened, edited, milestoned]
+  
+  label:
+    types: [created, deleted]
+
 name : Main Workflows
 jobs:
 
