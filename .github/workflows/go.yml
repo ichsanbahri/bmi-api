@@ -57,19 +57,3 @@ jobs:
        rules_file_name: '.zap/rules.tsv'
        cmd_options: '-a'
         
-    - name: APIsec scan
-      uses: apisec-inc/apisec-run-scan@f62d0c6fae8a80f97b091a323befdb56e6ad9993
-      with:
-        # The APIsec username with which the scans will be executed
-        apisec-username: ${{ secrets.apisec_username }}
-        # The Password of the APIsec user with which the scans will be executed
-        apisec-password: ${{ secrets.apisec_password}}
-        # The name of the project for security scan
-        apisec-project: "VAmPI"
-        # The name of the sarif format result file The file is written only if this property is provided.
-        sarif-result-file: "apisec-results.sarif"
-    
-    - name: Import results
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: ./apisec-results.sarif
