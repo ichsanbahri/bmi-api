@@ -24,7 +24,10 @@ jobs:
       - run: echo 'A review from ichsan-team was requested'
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macOS-latest]
 
     steps:
     - uses: actions/checkout@v2
