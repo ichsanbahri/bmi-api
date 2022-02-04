@@ -22,6 +22,7 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+
 	r := chi.NewRouter()
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
