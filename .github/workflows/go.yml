@@ -29,8 +29,14 @@ jobs:
     - name: Test
       run: go test -v ./...
     
-    - name: Owasp Zap Baseline Scan
-      uses: zaproxy/action-baseline@v0.3.0
+    - name: Owasp ZAP
+      uses: zaproxy/action-baseline@v0.6.1
       with:
-        target: "https://protected-harbor-67469.herokuapp.com/"
+       token: ${{ secrets.GITHUB_TOKEN }}
+       docker_name: 'owasp/zap2docker-stable'
+       target: 'https://www.zaproxy.org'
+       rules_file_name: '.zap/rules.tsv'
+       cmd_options: '-a'
+        
+
         
