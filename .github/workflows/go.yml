@@ -55,7 +55,6 @@ jobs:
          heroku_email: "ichsanbahri91@gmail.com"
 
     name: Codacy-Scanner
-    runs-on: ubuntu-latest
     steps:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout code
