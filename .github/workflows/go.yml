@@ -19,6 +19,11 @@ on:
 
 name : Main Workflows
 jobs:
+  specific_review_requested:
+      runs-on: ubuntu-latest
+      if: ${{ github.event.requested_team.name == 'ichsan-team'}}
+      steps:
+        - run: echo 'A review from ichsan-team was requested'
 
   build:
     runs-on: ubuntu-latest
