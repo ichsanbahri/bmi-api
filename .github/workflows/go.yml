@@ -53,8 +53,4 @@ jobs:
        target: 'https://protected-harbor-67469.herokuapp.com/'
        rules_file_name: '.zap/rules.tsv'
        cmd_options: '-a'
-    
-    label-issues:
-      runs-on: ubuntu-latest
-      steps:
-      - run: echo "Success!"
+        
