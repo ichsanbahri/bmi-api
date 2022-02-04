@@ -4,7 +4,6 @@ on:
   push:
     branches: 
      - main
-     - dev
 
 jobs:
 
@@ -22,6 +21,5 @@ jobs:
     - name: Build
       run: go build -v ./...
 
-    - name: run
-      run: go run -v ./...
-  
+    - name: test
+      run: go Test -v ./...
