@@ -54,25 +54,34 @@ jobs:
          heroku_app_name: "bmiupdate-calce" #Must be unique in Heroku
          heroku_email: "ichsanbahri91@gmail.com"
 
-    name: Codacy-Scanner
-    runs-on: ubuntu-latest
-
       # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b
-        with:
+    - name: Run Codacy Analysis CLI
+      uses: codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b
+      with:
           # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository
           # You can also omit the token and run the tools that support default configurations
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          verbose: true
-          output: results.sarif
-          format: sarif
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        verbose: true
+        output: results.sarif
+        format: sarif
           # Adjust severity of non-security issues
-          gh-code-scanning-compat: true
+        gh-code-scanning-compat: true
           # Force 0 exit code to allow SARIF file generation
           # This will handover control about PR rejection to the GitHub side
-          max-allowed-issues: 2147483647
+        max-allowed-issues: 2147483647
+
+    - name: Run Gosec Security Scanner
+       uses: securego/gosec@master
+       with:
+          # we let the report trigger content trigger a failure using the GitHub Security features.
+         args: '-no-fail -fmt sarif -out results.sarif ./...'
     
+    - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
+
     - name: Owasp ZAP
       uses: zaproxy/action-baseline@v0.6.1
       with:
