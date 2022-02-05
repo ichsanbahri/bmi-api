@@ -85,7 +85,7 @@ jobs:
       with:
        token: ${{ secrets.GITHUB_TOKEN }}
        docker_name: 'owasp/zap2docker-stable'
-       target: 'https://protected-harbor-67469.herokuapp.com/'
+       target: 'https://bmiupdate-calce.herokuapp.com/'
        rules_file_name: '.zap/rules.tsv'
        cmd_options: '-a'
         
