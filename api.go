@@ -43,6 +43,7 @@ func main() {
 	})
 
 	r.Get("/api/", func(w http.ResponseWriter, r *http.Request) {
+
 		height, err := strconv.ParseFloat(r.URL.Query().Get("height"), 32)
 		if err != nil {
 			returnError(w, "Height must in number")

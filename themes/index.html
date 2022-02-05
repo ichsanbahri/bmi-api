@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
     <!--Let browser know website is optimized for mobile-->
     <title>{{.title}}</title>
@@ -53,43 +54,70 @@
                                         <div class="text-center">
                                             <h4 class="mt-1 mb-5 pb-1">BMI Calculator</h4>
                                         </div>
-
-                                        <form>
-                                            <p>Please login to your account</p>
-
-                                            <div class="form-outline mb-4">
-                                                <input type="Firstname" id="form2Example11" class="form-control"
-                                                    placeholder="First Name" />
-                                                <label class="form-label" for="form2Example11">firstname</label>
+                                        <div class="col-xd-10 order-md-1">
+                                            <h6 class="mb-3">Please input</h6>
+                                            <form class="needs-validation" novalidate="">
+                                              <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                  <label for="firstName">First name</label>
+                                                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                                                  <div class="invalid-feedback">
+                                                    Valid first name is required.
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                  <label for="lastName">Last name</label>
+                                                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                                  <div class="invalid-feedback">
+                                                    Valid last name is required.
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                          <div class="col-xd-10 order-md-1">
+                                            <form class="needs-validation" novalidate="">
+                                              <div class="row">
+                                                <div class="col-md-6 mb-2">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        <i class="bi bi-gender-male">Male</i>
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 mb-2">
+                                                    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1" >
+                                                        <i class="bi bi-gender-female">Female</i>
+                                                    </label>
+                                                </div>
+                                                </div>
+                                            </form>
+                                          </div>
+                                          <form class="needs-validation" novalidate="">
+                                            <div class="row">
+                                              <div class="col-md-6 mb-3">
+                                                <label for="weight">Weight(kg)</label>
+                                                <input type="text" class="form-control" id="weight" placeholder="" value="" required="">
+                                                <div class="invalid-feedback">
+                                                  Valid Weight is required.
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 mb-3">
+                                                <label for="Height">Height(cm)</label>
+                                                <input type="text" class="form-control" id="Height" placeholder="" value="" required="">
+                                                <div class="invalid-feedback">
+                                                  Valid Height is required.
+                                                </div>
+                                              </div>
                                             </div>
-
-                                            <div class="form-outline mb-4">
-                                                <input type="lastname" id="form2Example22" class="form-control" placeholder="Last name"/>
-                                                <label class="form-label" for="form2Example22">Last Name</label>
-                                            </div>
-
-                                            <div class="text-center pt-1 mb-5 pb-1">
-                                                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                                    type="button">Log in</button>
-                                                <a class="text-muted" href="#!">Forgot password?</a>
-                                            </div>
-
-                                            <div class="d-flex align-items-center justify-content-center pb-4">
-                                                <p class="mb-0 me-2">Don't have an account?</p>
-                                                <button type="button" class="btn btn-outline-danger">Create new</button>
-                                            </div>
-
-                                        </form>
-
+                                            <button class="btn btn-primary btn-sm  btn-block" type="submit">Calculate</button>
+                                          </form>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                        <h4 class="mb-4">We are more than just a company</h4>
-                                        <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                            ex ea commodo consequat.</p>
+                                        <h4 class="mb-4">BMI Calculator</h4>
+                                        <p class="small mb-0">The ideal weight is everyone's dream. Not only having a body shape that supports appearance, ideal body weight also indicates a healthy body condition. How about you? Come on, calculate now in the BMI Calculator.</p>
                                     </div>
                                 </div>
                             </div>

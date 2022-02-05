@@ -38,11 +38,15 @@ go run api.go
 ```
 Open Url 
 ```sh
-http://127.0.0.1/api/?height=[insert your height]&weight=[insert your weight]
+http://127.0.0.1:8181/api/?height=[insert your height]&weight=[insert your weight]
 ```
 Demo Website you can use this link
 ```
 https://protected-harbor-67469.herokuapp.com/api/?height=200&weight=20
+
+or 
+
+https://bmiupdate-calce.herokuapp.com/
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
